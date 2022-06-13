@@ -27,6 +27,7 @@ const Body = () => {
                         <h3>{article.title}</h3>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
+                        <p>{article.body}</p>
                     </li>
                 }
             })}
