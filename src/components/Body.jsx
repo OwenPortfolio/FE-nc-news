@@ -1,4 +1,6 @@
 import {useEffect, useState} from 'react';
+import getArticles from '../utils/getArticles';
+
 
 const Body = () => {
 
@@ -6,34 +8,35 @@ const Body = () => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    function getArticles(){
-        return fetch('https://owen-news.herokuapp.com/api/articles')
-        .then((response) => response.json())
-    }
-
     useEffect(() => {
         getArticles(articles).then((articlesFromApi) => {
             console.log(articlesFromApi)
             setArticles(articlesFromApi.articles);
+            setLoading(false);
         });
     }, []);
+
+    if (loading){
+        return (<h1>LOADING</h1>)
+    } else {
         return (
-            <>
-            <h1 id='BodyHead'>Articles</h1>
-            <ul>
-                {articles.map((article) => {
-                    if(filter === 'none'){
-                        return <li key={article.index}>
-                            <h3>{article.title}</h3>
-                            <p>{article.author}</p>
-                            <p>{article.body}</p>
-                            <p>{article.created_at}</p>
-                        </li>
-                    }
-                })}
-            </ul>
-            </>
-        )
+        <>
+        <h1 id='BodyHead'>Articles</h1>
+        <ul>
+            {articles.map((article) => {
+                if(filter === 'none'){
+                    return <li key={article.index}>
+                        <h3>{article.title}</h3>
+                        <p>{article.author}</p>
+                        <p>{article.body}</p>
+                        <p>{article.created_at}</p>
+                    </li>
+                }
+            })}
+        </ul>
+        </>
+    )}
+
     }
 
 
