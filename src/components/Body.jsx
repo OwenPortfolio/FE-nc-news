@@ -27,7 +27,6 @@ const Body = () => {
                     return <li key={article.index}>
                         <h3>{article.title}</h3>
                         <p>{article.author}</p>
-                        <p>{article.body}</p>
                         <p>{article.created_at}</p>
                     </li>
                 }
