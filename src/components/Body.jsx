@@ -9,7 +9,6 @@ const Body = () => {
 
     useEffect(() => {
         getArticles(articles).then((articlesFromApi) => {
-            console.log(articlesFromApi)
             setArticles(articlesFromApi.articles);
             setLoading(false);
         });
