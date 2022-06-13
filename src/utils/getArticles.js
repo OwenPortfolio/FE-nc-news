@@ -1,6 +1,10 @@
+const axios = require('axios')
+
 const getArticles = () => {
-    return fetch('https://owen-news.herokuapp.com/api/articles')
-    .then((response) => response.json())
+    return axios.get('https://owen-news.herokuapp.com/api/articles')
+    .then(function (response) {
+        return response.data;
+    })
 }
 
 module.exports = getArticles;

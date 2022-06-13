@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import getArticles from '../utils/getArticles';
 
-
 const Body = () => {
 
     const [filter, setFilter] = useState('none');
