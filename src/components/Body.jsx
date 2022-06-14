@@ -21,9 +21,8 @@ const Body = () => {
         <h2 id='BodyHead'>Articles</h2>
         <ul id='ArticleList'>
             {articles.map((article) => {
-                let path = '/articles/' + article.article_id;
-                return <li key={article.article_id}>
-                    <Link to={path}><h3>{article.title}</h3></Link>
+                return <li className="listArticle" key={article.article_id}>
+                        <Link to={`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
                         <p id='blurb'>{article.body}</p>

@@ -10,8 +10,6 @@ import SingleTopic from './components/SingleTopic'
 import Article from './components/Article'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('All');
-
   return (
     <BrowserRouter>
       <div className="App">

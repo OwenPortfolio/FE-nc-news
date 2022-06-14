@@ -1,7 +1,7 @@
 const Header = () => {
     return <header>
-        <title>Owen's News Server</title>
-        <h1>Owen's News Server</h1>
+        <title>News Filter</title>
+        <h2>News Filter</h2>
     </header>
 }
 
