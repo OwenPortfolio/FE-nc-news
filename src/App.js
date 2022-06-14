@@ -7,7 +7,7 @@ import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Body from './components/Body'
 import SingleTopic from './components/SingleTopic'
-
+import Article from './components/Article'
 function App() {
   const [currentPage, setCurrentPage] = useState('All');
 
@@ -17,8 +17,9 @@ function App() {
         <Header/>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Body/>}/>
+          <Route path='/' element={<Body/>}/>
           <Route path='/articles/topics/:topic' element={<SingleTopic/>}/>
+          <Route path='/articles/:article' element={<Article/>}/>
         </Routes>
       </div>
     </BrowserRouter>
