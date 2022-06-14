@@ -21,10 +21,10 @@ const Article = () => {
         return (
         <div className="currentArticle">
             <h3>{currentArticle.title}</h3>
-            <h4>{currentArticle.author}</h4>
+            <h4>Author: {currentArticle.author}</h4>
             <p>{currentArticle.body}</p>
-            <p>Comments: {currentArticle.comment_count}</p>
-            <p>Upvotes: {currentArticle.votes}</p>
+            <p><h3>Comments: {currentArticle.comment_count}</h3></p>
+            <p><h3>Upvotes: {currentArticle.votes}</h3></p>
         </div> 
 
         )
