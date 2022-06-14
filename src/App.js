@@ -1,13 +1,14 @@
 import './App.css';
 
 import {useState} from 'react';
-import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Body from './components/Body'
 import SingleTopic from './components/SingleTopic'
 import Article from './components/Article'
+
 function App() {
   const [currentPage, setCurrentPage] = useState('All');
 
