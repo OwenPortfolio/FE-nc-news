@@ -17,11 +17,11 @@ const Body = () => {
     } else {
         return (
         <>
-        <h1 id='BodyHead'>Articles</h1>
+        <h2 id='BodyHead'>Articles</h2>
         <ul id='ArticleList'>
             {articles.map((article) => {
                     return <li key={article.index}>
-                        <h1>{article.title}</h1>
+                        <h2>{article.title}</h2>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
                         <p id='blurb'>{article.body}</p>

@@ -19,11 +19,11 @@ const SingleTopic = () => {
     } else {
         return (
         <>
-        <h1 id='BodyHead'>Topic: {topic}</h1>
+        <h2 id='BodyHead'>Topic: {topic}</h2>
         <ul id='ArticleList'>
             {topicFilter.map((article) => {
                     return <li key={article.article_id}>
-                        <h1>{article.title}</h1>
+                        <h2>{article.title}</h2>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
                         <p id='blurb'>{article.body}</p>
