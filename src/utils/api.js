@@ -17,3 +17,9 @@ export const getArticleById = (article) => {
         return res.data;
     })
 }
+
+export const sendVote = (article) => {
+    return myApi.patch(`/articles/${article}`, {inc_votes:1})
+    .then((res) => {
+    })
+}

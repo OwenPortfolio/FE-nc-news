@@ -17,6 +17,7 @@ code {
   padding: 1rem;
   margin: 1rem;
 }
+
 .currentArticle{
   margin-left: 3rem;
   margin-right: 3rem;
@@ -46,6 +47,11 @@ code {
   padding-left: 1rem;
 }
 
+Header{
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
 #ArticleList {
   list-style: none;
   margin-left: 1rem;
@@ -56,6 +62,10 @@ p{
 }
 @media only screen and (min-width: 600px){
 
+  Header{
+    margin-left: 15rem;
+    margin-right: 10rem;
+  }
   .currentArticle{
     margin-left: 15rem;
     margin-right:5rem;
