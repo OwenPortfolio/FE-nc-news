@@ -1,12 +1,12 @@
 import './App.css';
 
 import {useState} from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 
 import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Body from './components/Body'
-import Article from './components/Article'
+import SingleTopic from './components/SingleTopic'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('All');
@@ -18,7 +18,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Body/>}/>
-          <Route path='/articles/:article_id' element={<Article/>}/>
+          <Route path='/articles/topics/:topic' element={<SingleTopic/>}/>
         </Routes>
       </div>
     </BrowserRouter>

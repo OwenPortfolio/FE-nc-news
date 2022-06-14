@@ -16,7 +16,7 @@ code {
   padding-top: 2rem;
   margin-top: 2rem;
   height: 100%;
-  width: 160px;
+  width: 170px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -24,9 +24,15 @@ code {
   overflow-x: hidden;
 }
 
-ul {
+#ArticleList {
   margin-left: 10rem;
   margin-right: 10rem;
+}
+
+#TopicList {
+  list-style: none;
+  padding-right: 3rem;
+  padding-left: 3rem;
 }
 
 #blurb{
