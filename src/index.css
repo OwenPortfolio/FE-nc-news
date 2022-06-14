@@ -28,3 +28,10 @@ ul {
   margin-left: 10rem;
   margin-right: 10rem;
 }
+
+#blurb{
+  font-style:italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
