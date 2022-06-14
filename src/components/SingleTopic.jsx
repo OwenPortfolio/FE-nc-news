@@ -1,26 +1,28 @@
+import {getArticlesByTopic} from '../utils/api'
 import {useEffect, useState} from 'react';
-import getArticles from '../utils/getArticles';
+import {useParams} from 'react-router-dom';
 
-const Body = () => {
-    const [articles, setArticles] = useState([]);
+const SingleTopic = () => {
+    const {topic} = useParams();
+    const [topicFilter, setTopicFilter] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getArticles(articles).then((articlesFromApi) => {
-            setArticles(articlesFromApi.articles);
+        getArticlesByTopic(topic).then((articlesByTopicFilter) => {
+            setTopicFilter(articlesByTopicFilter.articles);
             setLoading(false);
         });
-    }, []);
-    
+    }, [topic]);
+
     if (loading){
         return (<h1>LOADING</h1>)
     } else {
         return (
         <>
-        <h2 id='BodyHead'>Articles</h2>
+        <h2 id='BodyHead'>Topic: {topic}</h2>
         <ul id='ArticleList'>
-            {articles.map((article) => {
-                    return <li key={article.index}>
+            {topicFilter.map((article) => {
+                    return <li key={article.article_id}>
                         <h2>{article.title}</h2>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
@@ -30,9 +32,5 @@ const Body = () => {
         </ul>
         </>
     )}
-
-    }
-
-
-
-export default Body;
+}
+export default SingleTopic;
