@@ -10,3 +10,10 @@ export const getArticlesByTopic = (topic) => {
         return res.data;
     })
 }
+
+export const getArticleById = (article) => {
+    return myApi.get(`/articles/${article}`)
+    .then((res) => {
+        return res.data;
+    })
+}

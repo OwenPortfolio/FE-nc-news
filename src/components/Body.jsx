@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import getArticles from '../utils/getArticles';
 
 const Body = () => {
@@ -20,8 +21,8 @@ const Body = () => {
         <h2 id='BodyHead'>Articles</h2>
         <ul id='ArticleList'>
             {articles.map((article) => {
-                    return <li key={article.index}>
-                        <h2>{article.title}</h2>
+                return <li className="listArticle" key={article.article_id}>
+                        <Link to={`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
                         <p id='blurb'>{article.body}</p>
