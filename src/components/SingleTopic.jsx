@@ -1,6 +1,6 @@
 import {getArticlesByTopic} from '../utils/api'
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 
 const SingleTopic = () => {
     const {topic} = useParams();
@@ -22,8 +22,9 @@ const SingleTopic = () => {
         <h2 id='BodyHead'>Topic: {topic}</h2>
         <ul id='ArticleList'>
             {topicFilter.map((article) => {
+                let path = '/articles/' + article.article_id;
                     return <li key={article.article_id}>
-                        <h2>{article.title}</h2>
+                        <Link to={path}><h3>{article.title}</h3></Link>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
                         <p id='blurb'>{article.body}</p>
