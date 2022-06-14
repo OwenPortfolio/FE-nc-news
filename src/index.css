@@ -45,7 +45,9 @@ code {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
+p{
+  text-align: justify;
+}
 @media only screen and (min-width: 600px){
 
   .currentArticle{
@@ -69,7 +71,7 @@ code {
 
   #ArticleList {
     margin-left: 12rem;
-    margin-right: 12rem;
+    margin-right: 8rem;
   }
 
   #TopicList {
