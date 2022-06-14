@@ -23,7 +23,7 @@ const Topics = () => {
         <ul id='TopicList'>
             {topics.map((topic) => {
                 let path = '/articles/topics/' + topic.slug;  
-                return <li key={topic.index}>
+                return <li className="NavTopics" key={topic.index}>
                     <Link to={path}><h3>{topic.slug}</h3></Link>
                 </li>
                 })}
