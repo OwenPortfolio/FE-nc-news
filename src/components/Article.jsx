@@ -1,7 +1,7 @@
 import {getArticleById, sendVote} from '../utils/api'
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
-
+import VoteButton from '../components/VoteButton'
 const Article = () => {
 
     const {article} = useParams();
@@ -17,11 +17,6 @@ const Article = () => {
         })
     }, [article]);
 
-    function vote(){
-        setVotes(votes + 1)
-        sendVote(currentArticle.article_id)
-    }
-
     if(loading){
         return (<h1>LOADING</h1>)
     } else {
@@ -31,7 +26,7 @@ const Article = () => {
                 <div id="articleFeatures">
                     <h4>Author: {currentArticle.author}</h4>
                     <button>Comment: {currentArticle.comment_count}</button>
-                    <button onClick={vote}>Upvotes: {votes}</button>
+                    <VoteButton votes={votes} article={article}/>
                 </div>
             <p>{currentArticle.body}</p>
         </div> 

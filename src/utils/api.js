@@ -21,5 +21,9 @@ export const getArticleById = (article) => {
 export const sendVote = (article) => {
     return myApi.patch(`/articles/${article}`, {inc_votes:1})
     .then((res) => {
+        return res;
+    })
+    .catch(error => {
+        return error;
     })
 }
