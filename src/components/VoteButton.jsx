@@ -26,7 +26,7 @@ const VoteButton = (data) => {
                 )
             })
         } else {
-            setVoteStatus('You already voted for this');
+            setVoteStatus('You Already Voted For This');
         }
 
     }
@@ -34,7 +34,7 @@ const VoteButton = (data) => {
     return (
         <>
         <button onClick={vote}>Upvote: {votes}</button>
-        <h3 id='voteStatus'>{voteStatus}</h3>
+        <h4 id='voteStatus'>{voteStatus}</h4>
         </>
     )
 }
