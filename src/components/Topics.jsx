@@ -12,7 +12,7 @@ const Topics = () => {
             setTopics(topicsFromApi.topics);
             setLoading(false);
         });
-    }, []);
+    }, [topics]);
 
     if(loading){
         return (<h1>LOADING</h1>)
@@ -23,7 +23,7 @@ const Topics = () => {
         <ul id='TopicList'>
             {topics.map((topic) => {
                 let path = '/articles/topics/' + topic.slug;  
-                return <li className="NavTopics" key={topic.index}>
+                return <li className="NavTopics" key={topic.slug}>
                     <Link to={path}><h3>{topic.slug}</h3></Link>
                 </li>
                 })}

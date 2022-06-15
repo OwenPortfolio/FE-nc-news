@@ -27,3 +27,10 @@ export const sendVote = (article) => {
         return error;
     })
 }
+
+export const getComments = (article) => {
+    return myApi.get(`/articles/${article}/comments`)
+    .then((res) => {
+        return res.data;
+    })
+}
