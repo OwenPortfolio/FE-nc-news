@@ -1,13 +1,16 @@
-import {getArticleById, sendVote} from '../utils/api'
+import {getArticleById} from '../utils/api'
 import {useParams} from 'react-router-dom';
 import {useEffect, useState} from 'react';
-import VoteButton from '../components/VoteButton'
+import VoteButton from '../components/VoteButton';
+import Comments from '../components/Comments';
+
 const Article = () => {
 
     const {article} = useParams();
     const [currentArticle, setCurrentArticle] = useState();
     const [loading, setLoading] = useState(true);
     const [votes, setVotes] = useState(0);
+    const [seeComments, setSeeComments] = useState(false);
 
     useEffect(() => {
         getArticleById(article).then((articleById) => {
@@ -16,6 +19,16 @@ const Article = () => {
             setLoading(false);
         })
     }, [article]);
+
+    function revealComments() {
+        setSeeComments(!seeComments);
+    }
+    
+    let commentBox = <></>;
+
+    if(seeComments){
+        commentBox = <Comments/>
+    }
 
     if(loading){
         return (<h1>LOADING</h1>)
@@ -26,9 +39,12 @@ const Article = () => {
                 <div id="articleFeatures">
                     <h4>Author: {currentArticle.author}</h4>
                     <button>Comment: {currentArticle.comment_count}</button>
+ 
                     <VoteButton votes={votes} article={article}/>
                 </div>
             <p>{currentArticle.body}</p>
+            <button onClick={revealComments}>See Comments</button>
+            <>{commentBox}</>
         </div> 
 
         )

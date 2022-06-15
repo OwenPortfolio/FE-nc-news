@@ -11,6 +11,26 @@ code {
     monospace;
 }
 
+ul {
+  list-style: none;
+}
+
+#CommentList {
+  text-align: center;
+  display: inline;
+  border-radius: 0.5rem;
+}
+
+.commentCards {
+  background-color: rgb(184, 210, 232);
+  padding: 0.5rem;
+  margin: 0.5em;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  border-radius: 0.5rem;
+  min-width: 15rem;
+}
+
 .listArticle {
   border-radius: 1rem;
   background-color: rgb(184, 210, 232);
