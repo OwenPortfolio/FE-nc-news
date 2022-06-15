@@ -4,8 +4,8 @@ import {useEffect, useState} from 'react';
 import VoteButton from '../components/VoteButton';
 import Comments from '../components/Comments';
 
-const Article = () => {
-
+const Article = ({user}) => {
+    
     const {article} = useParams();
     const [currentArticle, setCurrentArticle] = useState();
     const [loading, setLoading] = useState(true);
@@ -27,7 +27,7 @@ const Article = () => {
     let commentBox = <></>;
 
     if(seeComments){
-        commentBox = <Comments/>
+        commentBox = <Comments user={user}/>
     }
 
     if(loading){
@@ -41,7 +41,7 @@ const Article = () => {
                     <VoteButton votes={votes} article={article}/>
                 </div>
             <p>{currentArticle.body}</p>
-            <button onClick={revealComments}>See Comments</button>
+            <button onClick={revealComments}>See Comments: {currentArticle.comment_count}</button>
             <>{commentBox}</>
         </div> 
 

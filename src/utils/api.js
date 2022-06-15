@@ -34,3 +34,14 @@ export const getComments = (article) => {
         return res.data;
     })
 }
+
+export const postComment = (article, comment, user) => {
+    console.log(article, comment, user)
+    return myApi.post(`/articles/${article}/comments`, {username: user, body: comment})
+    .then((res) => {
+        return res;
+    })
+    .catch(error => {
+        return error;
+    })
+}

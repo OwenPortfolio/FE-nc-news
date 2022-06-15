@@ -9,9 +9,8 @@ import Body from './components/Body'
 import SingleTopic from './components/SingleTopic'
 import Article from './components/Article'
 
-const[user, setUser] = useState('Guest');
-
 function App() {
+  const[user, setUser] = useState('grumpy19');
   return (
     <BrowserRouter>
       <div className="App">
