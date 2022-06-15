@@ -1,6 +1,6 @@
 import {getComments} from '../utils/api'
 import {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import CommentCard from '../components/CommentCard';
 
 const Comments = (seeComment) => {
@@ -14,7 +14,7 @@ const Comments = (seeComment) => {
             setComments(commentsByArticleId.comments);
             setLoading(false);
         });
-    }, []);
+    }, [article]);
 
     if (loading){
         return (<h1>LOADING</h1>)
@@ -24,7 +24,7 @@ const Comments = (seeComment) => {
         <h2>Comments:</h2>
         <ul id='CommentList'>
             {comments.map((comment) => {
-                    return <CommentCard comment={comment}/>
+                    return <CommentCard key={comment.comment_id} comment={comment}/>
             })}
         </ul>
         </>
