@@ -36,7 +36,6 @@ export const getComments = (article) => {
 }
 
 export const postComment = (article, comment, user) => {
-    console.log(article, comment, user)
     return myApi.post(`/articles/${article}/comments`, {username: user, body: comment})
     .then((res) => {
         return res;
