@@ -22,6 +22,7 @@ const Comments = (seeComment) => {
         return (
         <>
         <h2>Comments:</h2>
+        <button>Comment: {currentArticle.comment_count}</button>
         <ul id='CommentList'>
             {comments.map((comment) => {
                     return <CommentCard key={comment.comment_id} comment={comment}/>

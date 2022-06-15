@@ -38,8 +38,6 @@ const Article = () => {
             <h3>{currentArticle.title}</h3>
                 <div id="articleFeatures">
                     <h4>Author: {currentArticle.author}</h4>
-                    <button>Comment: {currentArticle.comment_count}</button>
- 
                     <VoteButton votes={votes} article={article}/>
                 </div>
             <p>{currentArticle.body}</p>
