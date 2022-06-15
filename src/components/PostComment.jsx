@@ -8,6 +8,7 @@ const PostComment = (data) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        event.target.reset();
         postComment(data.article, comment, data.user.user)
         .then((res) => {
             if(res.status === 201){
