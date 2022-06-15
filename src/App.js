@@ -9,6 +9,8 @@ import Body from './components/Body'
 import SingleTopic from './components/SingleTopic'
 import Article from './components/Article'
 
+const[user, setUser] = useState('Guest');
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Body/>}/>
           <Route path='/articles/topics/:topic' element={<SingleTopic/>}/>
-          <Route path='/articles/:article' element={<Article/>}/>
+          <Route path='/articles/:article' element={<Article user={user}/>}/>
         </Routes>
       </div>
     </BrowserRouter>
