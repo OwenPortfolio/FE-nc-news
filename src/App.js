@@ -10,6 +10,7 @@ import SingleTopic from './components/SingleTopic'
 import Article from './components/Article'
 
 function App() {
+  const[user, setUser] = useState('grumpy19');
   return (
     <BrowserRouter>
       <div className="App">
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Body/>}/>
           <Route path='/articles/topics/:topic' element={<SingleTopic/>}/>
-          <Route path='/articles/:article' element={<Article/>}/>
+          <Route path='/articles/:article' element={<Article user={user}/>}/>
         </Routes>
       </div>
     </BrowserRouter>
