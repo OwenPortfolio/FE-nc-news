@@ -19,16 +19,16 @@ const VoteButton = (data) => {
                     setVotes(votes)
                     setVoteStatus('Something Went Wrong')
                 };
-                setTimeout(
-                    function (){
-                        setVoteStatus('')
-                    }, 3000
-                )
+
             })
         } else {
             setVoteStatus('You Already Voted For This');
         }
-
+        setTimeout(
+            function (){
+                setVoteStatus('')
+            }, 3000
+        )
     }
 
     return (
