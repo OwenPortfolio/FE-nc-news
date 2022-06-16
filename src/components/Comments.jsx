@@ -4,8 +4,7 @@ import {useParams} from 'react-router-dom';
 import CommentCard from '../components/CommentCard';
 import PostComment from '../components/PostComment';
 
-const Comments = (user) => {
-    
+const Comments = ({user}) => {
     const {article} = useParams();
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -29,7 +28,7 @@ const Comments = (user) => {
         </div>
         <ul id='CommentList'>
             {comments.map((comment) => {
-                    return <CommentCard key={comment.comment_id} comment={comment}/>
+                    return <CommentCard key={comment.comment_id} user={user} comment={comment}/>
             })}
         </ul>
         </>

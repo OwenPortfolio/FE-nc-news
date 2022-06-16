@@ -2,14 +2,13 @@ import {useState} from 'react';
 import {postComment} from '../utils/api'
 
 const PostComment = (data) => {
-
     const [comment, setComment] = useState();
     const [commentStatus, setCommentStatus] = useState();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
-        postComment(data.article, comment, data.user.user)
+        postComment(data.article, comment, data.user)
         .then((res) => {
             if(res.status === 201){
                 setCommentStatus('Comment Posted')

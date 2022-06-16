@@ -1,10 +1,16 @@
+import DeleteComment from '../components/DeleteComment';
 
-const CommentCard = (comment) => {
-    comment = comment.comment;
+const CommentCard = (data) => {
+
+    let comment = data.comment;
+    let user = data.user;
+    let author = data.comment.author;
+
     return <li className='commentCards' key={comment.comment_id}>
     <div>
-        <h4 className='author'>{comment.author}:</h4>
+        <h4 className='author'>{author}:</h4>
         <p>{comment.body}</p>
+        <DeleteComment user={user} author={comment.author}/>
     </div>
 </li>
 }

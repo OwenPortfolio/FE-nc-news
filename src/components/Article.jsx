@@ -5,7 +5,6 @@ import VoteButton from '../components/VoteButton';
 import Comments from '../components/Comments';
 
 const Article = ({user}) => {
-    
     const {article} = useParams();
     const [currentArticle, setCurrentArticle] = useState();
     const [loading, setLoading] = useState(true);
