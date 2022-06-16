@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {postComment} from '../utils/api'
 
 const PostComment = (data) => {
+
     const [comment, setComment] = useState();
     const [commentStatus, setCommentStatus] = useState();
     
@@ -12,14 +13,17 @@ const PostComment = (data) => {
         .then((res) => {
             if(res.status === 201){
                 setCommentStatus('Comment Posted')
+                data.setLatestComment(`You Posted: ${res.data.comment.body}`)
                 setTimeout(
                     function (){
                         setCommentStatus('')
-                    }, 2500
+                        data.setLatestComment('')
+                    }, 1500
                 )
             } else {
                 setCommentStatus('Something Went Wrong')
             }
+            
         })
     }
 

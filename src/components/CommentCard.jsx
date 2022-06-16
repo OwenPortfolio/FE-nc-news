@@ -2,7 +2,6 @@ import DeleteComment from '../components/DeleteComment';
 import {useState} from 'react'
 
 const CommentCard = (data) => {
-
     let comment = data.comment;
     let user = data.user;
     let author = data.comment.author;

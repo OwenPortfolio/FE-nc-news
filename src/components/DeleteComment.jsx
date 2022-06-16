@@ -19,7 +19,7 @@ const DeleteComment = (data) => {
                         function (){
                             setDeleteStatus('')
                             setDeleted(true)
-                        }, 2500
+                        }, 1500
                     )
 
                 } else {
