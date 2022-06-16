@@ -17,7 +17,6 @@ const Article = ({user}) => {
     useEffect(() => {
         getArticleById(article).then((articleById) => {
             if(articleById.article){
-                console.log('hello')
                 setCurrentArticle(articleById.article);
                 setArticleText(articleById.article.body)
                 setVotes(articleById.article.votes)
