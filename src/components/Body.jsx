@@ -4,8 +4,9 @@ import {getArticles} from '../utils/api';
 import SortBox from '../components/SortBox';
 
 const Body = () => {
+
     const [sort, setSort] = useState('date');
-    const [sortOrder, setSortOrder] = useState(true); 
+    const [sortOrder, setSortOrder] = useState('desc'); 
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -14,7 +15,7 @@ const Body = () => {
             setArticles(articlesFromApi.articles);
             setLoading(false);
         });
-    }, []);
+    }, [sort, sortOrder]);
     
     if (loading){
         return (<h1>LOADING</h1>)
@@ -22,8 +23,8 @@ const Body = () => {
         return (
         <>
         <h2 id='BodyHead'>Articles</h2>
+        <p><SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/></p>
         <ul id='ArticleList'>
-        <p><SortBox sort={sort} setSort={setSort} sortOrder={sortOrder} setSortOrder={setSortOrder}/></p>
             {articles.map((article) => {
                 return <li className="listArticle" key={article.article_id}>
                         <Link to={`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
