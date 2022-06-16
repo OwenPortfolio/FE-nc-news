@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header/>
-        <Navbar/>
+        <Navbar user={user}/>
         <Routes>
           <Route path='/' element={<Body/>}/>
           <Route path='/articles/topics/:topic' element={<SingleTopic/>}/>

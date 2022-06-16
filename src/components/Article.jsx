@@ -41,7 +41,7 @@ const Article = ({user}) => {
                 </div>
             <p>{currentArticle.body}</p>
             <button onClick={revealComments}>See Comments: {currentArticle.comment_count}</button>
-            <>{commentBox}</>
+            <div id='commentBox'>{commentBox}</div>
         </div> 
 
         )
