@@ -23,7 +23,7 @@ const Body = () => {
         return (
         <>
         <h2 id='BodyHead'>Articles</h2>
-        <p><SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/></p>
+        <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <ul id='ArticleList'>
             {articles.map((article) => {
                 return <li className="listArticle" key={article.article_id}>

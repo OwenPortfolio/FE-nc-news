@@ -80,3 +80,13 @@ export const postComment = (article, comment, user) => {
         return error;
     })
 }
+
+export const deleteComment = (commentId) => {
+    return myApi.delete(`/comments/${commentId}`)
+    .then((res) => {
+        return res;
+    })
+    .catch(error => {
+        return error;
+    })
+}

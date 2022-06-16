@@ -23,7 +23,7 @@ const SingleTopic = () => {
         return (
         <>
         <h2 id='BodyHead'>Topic: {topic}</h2>
-        <p><SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/></p>
+        <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <ul id='ArticleList'>
             {topicFilter.map((article) => {
                 let path = '/articles/' + article.article_id;

@@ -1,26 +1,32 @@
 import {useState} from 'react';
 import {postComment} from '../utils/api'
 
-const PostComment = (data) => {
+const PostComment = (props) => {
+
+    const {article, user, setLatestComment, setUpdate} = props
 
     const [comment, setComment] = useState();
     const [commentStatus, setCommentStatus] = useState();
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
-        postComment(data.article, comment, data.user.user)
+        postComment(article, comment, user)
         .then((res) => {
             if(res.status === 201){
                 setCommentStatus('Comment Posted')
+                setLatestComment(`You Posted: ${comment}`)
                 setTimeout(
                     function (){
                         setCommentStatus('')
-                    }, 2500
+                        setLatestComment('')
+                        setUpdate(true)
+                    }, 1500
                 )
             } else {
                 setCommentStatus('Something Went Wrong')
             }
+            
         })
     }
 
