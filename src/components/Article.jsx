@@ -27,9 +27,8 @@ const Article = ({user}) => {
     let boxName = 'See Comments'
 
     let articleText = currentArticle.body;
-
     if(seeComments){
-        articleText = ''
+        articleText='';
         boxName = 'Hide Comments'
         commentBox = <Comments user={user}/>
     }
