@@ -24,8 +24,11 @@ const Article = ({user}) => {
     }
     
     let commentBox = <></>;
+    let boxName = 'See Comments'
 
     if(seeComments){
+        currentArticle.body=('')
+        boxName = 'Hide Comments'
         commentBox = <Comments user={user}/>
     }
 
@@ -40,7 +43,7 @@ const Article = ({user}) => {
                     <VoteButton votes={votes} article={article}/>
                 </div>
             <p>{currentArticle.body}</p>
-            <button onClick={revealComments}>See Comments: {currentArticle.comment_count}</button>
+            <button onClick={revealComments}>{boxName}: {currentArticle.comment_count}</button>
             <div id='commentBox'>{commentBox}</div>
         </div> 
 
