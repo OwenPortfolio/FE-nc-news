@@ -6,16 +6,18 @@ import PostComment from '../components/PostComment';
 
 const Comments = ({user}) => {
     const {article} = useParams();
+
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [latestComment, setLatestComment] = useState('') 
+    const [update, setUpdate] = useState(false);
 
     useEffect(() => {
         getComments(article).then((commentsByArticleId) => {
             setComments(commentsByArticleId.comments);
             setLoading(false);
         });
-    }, [article]);
+    }, [update]);
 
     if (loading){
         return (<h1>LOADING</h1>)
@@ -24,7 +26,7 @@ const Comments = ({user}) => {
         <>
         <h2>Comments:</h2>
         <div>
-            <PostComment setLatestComment={setLatestComment} user={user} article={article}/>
+            <PostComment setLatestComment={setLatestComment} setUpdate={setUpdate} user={user} article={article}/>
             <h3>{latestComment}</h3>
         </div>
         <ul id='CommentList'>

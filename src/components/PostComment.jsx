@@ -1,7 +1,9 @@
 import {useState} from 'react';
 import {postComment} from '../utils/api'
 
-const PostComment = (data) => {
+const PostComment = (props) => {
+
+    const {article, user, setLatestComment, setUpdate} = props
 
     const [comment, setComment] = useState();
     const [commentStatus, setCommentStatus] = useState();
@@ -9,15 +11,16 @@ const PostComment = (data) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
-        postComment(data.article, comment, data.user)
+        postComment(article, comment, user)
         .then((res) => {
             if(res.status === 201){
                 setCommentStatus('Comment Posted')
-                data.setLatestComment(`You Posted: ${res.data.comment.body}`)
+                setLatestComment(`You Posted: ${comment}`)
                 setTimeout(
                     function (){
                         setCommentStatus('')
-                        data.setLatestComment('')
+                        setLatestComment('')
+                        setUpdate(true)
                     }, 1500
                 )
             } else {

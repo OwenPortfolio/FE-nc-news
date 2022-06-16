@@ -1,10 +1,9 @@
 import {useState } from 'react';
 import {deleteComment} from '../utils/api';
 
-const DeleteComment = (data) => {
+const DeleteComment = (props) => {
 
-    let setDeleted = data.setDeleted
-    let id = data.id;
+    const {setDeleted, id} = props;
 
     const [deleteStatus, setDeleteStatus] = useState('');
 
@@ -34,7 +33,7 @@ const DeleteComment = (data) => {
         }
 
     }
-    if(data.user === data.author) {
+    if(props.user === props.author) {
         return (
         <>
         <h2>{deleteStatus}</h2>

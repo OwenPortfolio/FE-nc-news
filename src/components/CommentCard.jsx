@@ -1,10 +1,10 @@
 import DeleteComment from '../components/DeleteComment';
 import {useState} from 'react'
 
-const CommentCard = (data) => {
-    let comment = data.comment;
-    let user = data.user;
-    let author = data.comment.author;
+const CommentCard = (props) => {
+    let comment = props.comment;
+    let user = props.user;
+    let author = props.comment.author;
 
     const [deleted, setDeleted] = useState(false);
 
