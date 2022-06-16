@@ -9,16 +9,25 @@ const SingleTopic = () => {
     const [loading, setLoading] = useState(true);
     const [sort, setSort] = useState('date');
     const [sortOrder, setSortOrder] = useState('desc');
+    const [error, setError] = useState();
 
     useEffect(() => {
         getArticlesByTopic(topic, sort, sortOrder).then((articlesByTopicFilter) => {
-            setTopicFilter(articlesByTopicFilter.articles);
-            setLoading(false);
+            if(articlesByTopicFilter.articles){
+                setTopicFilter(articlesByTopicFilter.articles);
+                setLoading(false);
+            } else {
+                setError(articlesByTopicFilter.response.status)
+                setLoading(false)
+            }
+
         });
     }, [topic, sort, sortOrder]);
 
     if (loading){
         return (<h1>LOADING</h1>)
+    } else if(error === 404){
+        return <h2>404 Not Found</h2>
     } else {
         return (
         <>

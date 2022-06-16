@@ -24,7 +24,6 @@ const Article = ({user}) => {
             } else {
                 setError(articleById.response.status)
             }
-
             setLoading(false);
         })
     }, [article]);
