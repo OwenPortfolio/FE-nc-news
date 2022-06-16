@@ -52,6 +52,9 @@ export const getArticleById = (article) => {
     .then((res) => {
         return res.data;
     })
+    .catch(error => {
+        return error;
+    })
 }
 
 export const sendVote = (article) => {
