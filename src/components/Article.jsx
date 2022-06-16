@@ -5,15 +5,18 @@ import VoteButton from '../components/VoteButton';
 import Comments from '../components/Comments';
 
 const Article = ({user}) => {
+
     const {article} = useParams();
     const [currentArticle, setCurrentArticle] = useState();
     const [loading, setLoading] = useState(true);
     const [votes, setVotes] = useState(0);
     const [seeComments, setSeeComments] = useState(false);
+    const [articleText, setArticleText] = useState('')
 
     useEffect(() => {
         getArticleById(article).then((articleById) => {
             setCurrentArticle(articleById.article);
+            setArticleText(articleById.article.body)
             setVotes(articleById.article.votes)
             setLoading(false);
         })
@@ -25,10 +28,10 @@ const Article = ({user}) => {
     
     let commentBox = <></>;
     let boxName = 'See Comments'
+    let body = articleText;
 
-    let articleText = currentArticle.body;
     if(seeComments){
-        articleText='';
+        body =''
         boxName = 'Hide Comments'
         commentBox = <Comments user={user}/>
     }
@@ -43,7 +46,7 @@ const Article = ({user}) => {
                     <h4>Author: {currentArticle.author}</h4>
                     <VoteButton votes={votes} article={article}/>
                 </div>
-            <p>{articleText}</p>
+            <p>{body}</p>
             <button onClick={revealComments}>{boxName}: {currentArticle.comment_count}</button>
             <div id='commentBox'>{commentBox}</div>
         </div> 
