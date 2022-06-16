@@ -11,6 +11,7 @@ import Article from './components/Article';
 import Error from './components/Error';
 
 const error = <h1>404 Not Found</h1>
+
 function App() {
   const[user, setUser] = useState('grumpy19');
   return (

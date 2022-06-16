@@ -17,6 +17,7 @@ const Article = ({user}) => {
     useEffect(() => {
         getArticleById(article).then((articleById) => {
             if(articleById.article){
+                console.log(articleById.article)
                 setCurrentArticle(articleById.article);
                 setArticleText(articleById.article.body)
                 setVotes(articleById.article.votes)
@@ -43,8 +44,8 @@ const Article = ({user}) => {
 
     if(loading){
         return (<h1>LOADING</h1>)
-    } else if(error === 404){
-        return <h2>404 Not Found</h2>
+    } else if(error){
+        return <h2>{error}: No Such Article</h2>
     } else {
         return (
         <div className="currentArticle">

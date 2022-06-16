@@ -16,6 +16,7 @@ const SingleTopic = () => {
             if(articlesByTopicFilter.articles){
                 setTopicFilter(articlesByTopicFilter.articles);
                 setLoading(false);
+                setError(false);
             } else {
                 setError(articlesByTopicFilter.response.status)
                 setLoading(false)
