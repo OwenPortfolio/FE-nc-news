@@ -26,8 +26,10 @@ const Article = ({user}) => {
     let commentBox = <></>;
     let boxName = 'See Comments'
 
+    let articleText = currentArticle.body;
+
     if(seeComments){
-        currentArticle.body=('')
+        articleText = ''
         boxName = 'Hide Comments'
         commentBox = <Comments user={user}/>
     }
@@ -42,7 +44,7 @@ const Article = ({user}) => {
                     <h4>Author: {currentArticle.author}</h4>
                     <VoteButton votes={votes} article={article}/>
                 </div>
-            <p>{currentArticle.body}</p>
+            <p>{articleText}</p>
             <button onClick={revealComments}>{boxName}: {currentArticle.comment_count}</button>
             <div id='commentBox'>{commentBox}</div>
         </div> 

@@ -4,7 +4,7 @@ import {postComment} from '../utils/api'
 const PostComment = (data) => {
     const [comment, setComment] = useState();
     const [commentStatus, setCommentStatus] = useState();
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         event.target.reset();
