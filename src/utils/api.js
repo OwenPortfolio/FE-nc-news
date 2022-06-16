@@ -4,11 +4,47 @@ const myApi = axios.create({
     baseURL: 'https://owen-news.herokuapp.com/api'
 })
 
-export const getArticlesByTopic = (topic) => {
-    return myApi.get(`/articles?topic=${topic}`)
-    .then((res) => {
-        return res.data;
-    })
+export const getArticles = (sort, sortOrder) => {
+
+    if(sort === 'comments'){
+        sort = 'comment_count';
+    }
+    
+    if(sort === 'date'){
+        let url = `/articles?order=${sortOrder}`
+        return myApi.get(url)
+        .then(function (response) {
+            return response.data;
+        })
+    } else {
+        let url = `/articles?sort_by=${sort}&order=${sortOrder}`
+        return myApi.get(url)
+        .then(function (response) {
+            return response.data;
+        })
+    }
+}
+
+export const getArticlesByTopic = (topic, sort, sortOrder) => {
+    /*currently body/getArticles and singleTopic/getArticlesByTopic are sharing
+    and can probably be combined*/
+    if(sort === 'comments'){
+        sort = 'comment_count';
+    }
+    
+    if(sort === 'date'){
+        let url = `/articles?topic=${topic}&order=${sortOrder}`
+        return myApi.get(url)
+        .then(function (response) {
+            return response.data;
+        })
+    } else {
+        let url = `/articles?topic=${topic}&sort_by=${sort}&order=${sortOrder}`
+        return myApi.get(url)
+        .then(function (response) {
+            return response.data;
+        })
+    }
 }
 
 export const getArticleById = (article) => {

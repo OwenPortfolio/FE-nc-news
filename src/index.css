@@ -15,6 +15,17 @@ ul {
   list-style: none;
 }
 
+#SortBox {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  display: flex;
+
+}
+
+
 #CommentBox {
   overflow-wrap: normal;
   padding:2rem;
@@ -87,6 +98,15 @@ p{
   text-align: justify;
 }
 @media only screen and (min-width: 600px){
+
+  #SortBox {
+    margin-left: 20rem;
+    margin-right: 20rem;
+    text-align: center;
+    display: flex;
+    
+  }
+  
 
   Header{
     margin-left: 15rem;

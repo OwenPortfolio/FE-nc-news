@@ -1,18 +1,21 @@
 import {getArticlesByTopic} from '../utils/api'
 import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
+import SortBox from '../components/SortBox';
 
 const SingleTopic = () => {
     const {topic} = useParams();
     const [topicFilter, setTopicFilter] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [sort, setSort] = useState('date');
+    const [sortOrder, setSortOrder] = useState('desc');
 
     useEffect(() => {
-        getArticlesByTopic(topic).then((articlesByTopicFilter) => {
+        getArticlesByTopic(topic, sort, sortOrder).then((articlesByTopicFilter) => {
             setTopicFilter(articlesByTopicFilter.articles);
             setLoading(false);
         });
-    }, [topic]);
+    }, [topic, sort, sortOrder]);
 
     if (loading){
         return (<h1>LOADING</h1>)
@@ -20,6 +23,7 @@ const SingleTopic = () => {
         return (
         <>
         <h2 id='BodyHead'>Topic: {topic}</h2>
+        <p><SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/></p>
         <ul id='ArticleList'>
             {topicFilter.map((article) => {
                 let path = '/articles/' + article.article_id;
