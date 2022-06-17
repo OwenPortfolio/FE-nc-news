@@ -49,7 +49,7 @@ const SingleTopic = () => {
         <ul id='ArticleList'>
             {topicFilter.map((article) => {
                 let path = '/articles/' + article.article_id;
-                    return <li className='listArticle' key={article.article_id}>
+                    return <li className='articleCard' key={article.article_id}>
                         <Link to={path}><h3>{article.title}</h3></Link>
                         <p>{article.author}</p>
                         <p>{article.created_at}</p>
