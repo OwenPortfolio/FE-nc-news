@@ -1,7 +1,9 @@
-const SortBox = ({setSort, setSortOrder}) => {
+const SortBox = (props) => {
+    const {setSort, setSortOrder, setPage} = props;
     
     function sorting(event){
         setSort(event.target.innerText.toLowerCase())
+        setPage(0)
     }
 
     function ordering(event){

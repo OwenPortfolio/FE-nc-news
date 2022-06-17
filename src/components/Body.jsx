@@ -10,7 +10,7 @@ const Body = () => {
     const [sortOrder, setSortOrder] = useState('desc'); 
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [maxPages, setMaxPages] = useState();
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const Body = () => {
         return (
         <>
         <h3 id='BodyHead'>Stories</h3>
-        <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
+        <SortBox setPage={setPage} sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <Pages page={page} setPage={setPage} maxPage={maxPages}/>
         <ul id='ArticleList'>
             {articles.map((article) => {

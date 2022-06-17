@@ -11,7 +11,7 @@ const SingleTopic = () => {
     const [sort, setSort] = useState('date');
     const [sortOrder, setSortOrder] = useState('desc');
     const [error, setError] = useState();
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [maxPages, setMaxPages] = useState();
 
 

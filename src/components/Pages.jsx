@@ -23,7 +23,7 @@ const Pages = (props) => {
     return (
         <div id='Pagination'>
             {previous()}
-            <h2>Page: {props.page + 1} </h2>
+            <h2>Page: {props.page + 1} / {props.maxPage} </h2>
             {next()}
         </div>
         )
