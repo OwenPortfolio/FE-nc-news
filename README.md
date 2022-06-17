@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Introduction to Tabloid Filter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tabloid Filter was built as part of my front end project for the Northcoders skills bootcamp and provides a front end to the PSQL news server built for the back end project. It aims to deliver stories from the news server in a clean and intuitive way to the end user and can be easily hosted on any react compatible hosting such as Heroku. 
 
-## Available Scripts
+A hosted version of this project can be viewed here: [Tabloid Filter](https://tabloid-filter.herokuapp.com/).
 
-In the project directory, you can run:
+The back end project can be viewed here: [bc-nc-news](https://github.com/OwenPortfolio/be-nc-news).
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tabloid Filter was designed to be intuitive to the user, requiring little instruction and using clear language and accepted web design conventions to keep the site accessible. The landing page, by default, directs to user to all articles while a responsive bar of sorting and filtering buttons allows the user to quickly narrow down these results. Clicking through to an article will also allow you to upvote an article, views the comments, post a comment, or delete a previously posted comment. All providing immediate feedback to the user. If the user would like to return to the landing page, or individual topics, the navbar remains accessible at all times. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Users
 
-### `npm test`
+Tabloid Filter does not include user authentication currently and so user is hardcoded by default, but can be modified by changing the default user state in `App.js`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requirements
 
-### `npm run build`
+Tabloid Filter requires `Node v18.0.0`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run Locally
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To run Tabloid Filter locally clone the repo use `git clone` https://github.com/OwenPortfolio/FE-nc-news, `cd` to the install folder, then `\nc-news`, and type `npm start`.
