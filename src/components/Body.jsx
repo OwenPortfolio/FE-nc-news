@@ -26,7 +26,7 @@ const Body = () => {
         <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <ul id='ArticleList'>
             {articles.map((article) => {
-                return <li className="listArticle" key={article.article_id}>
+                return <li className="articleCard" key={article.article_id}>
                         <Link to={`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
                         <p>Author: {article.author} Date: {article.created_at.substring(0,10)}</p>
                         <p id='blurb'>{article.body}</p>

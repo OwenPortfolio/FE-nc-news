@@ -28,11 +28,12 @@ button {
 }
 
 button:hover {
+  transform: scale(1.05);
   background-color: rgb(24, 96, 138);
 }
 #ArticleText{
-  border-radius: 1rem;
-  background-color: rgb(184, 210, 232);
+  border-radius: 0.5rem;
+  background-color: rgb(201, 222, 241);
   padding: 1rem;
   margin: 1rem;
 }
@@ -61,7 +62,7 @@ button:hover {
 }
 
 .commentCards {
-  background-color: rgb(184, 210, 232);
+  background-color: rgb(201, 222, 241);
   padding: 0.5rem;
   margin: 0.5em;
   margin-left: 3rem;
@@ -70,11 +71,17 @@ button:hover {
   min-width: 15rem;
 }
 
-.listArticle {
-  border-radius: 1rem;
-  background-color: rgb(184, 210, 232);
+.articleCard {
+  border-radius: 0.5rem;
+  background-color: rgb(201, 222, 241);
   padding: 1rem;
   margin: 1rem;
+}
+
+.articleCard:hover{
+  transform: scale(1.05);
+  color:white;
+  background-color: rgb(104, 159, 191);
 }
 
 .currentArticle{
@@ -86,8 +93,9 @@ button:hover {
 }
 .Navbar {
   border-radius: 1rem;
-  background-color:rgb(189, 212, 231);
+  background-color:rgb(201, 222, 241);
   display: block;
+  padding-bottom:0.1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-top: 1rem;
@@ -102,11 +110,12 @@ button:hover {
   margin-right: 0.5rem;
 }
 #TopicList {
+  border-radius: 0.5rem;
+  padding:0.1rem;
+  background-color: white;
   justify-content: center;
   display: flex;
   list-style: none;
-  padding-right: 1rem;
-  padding-left: 1rem;
 }
 
 Header{
@@ -181,8 +190,8 @@ p{
   #TopicList {
     display: block;
     list-style: none;
-    padding-right: 3rem;
-    padding-left: 3rem;
+    margin-left:1rem;
+    margin-right:1rem;
   }
 }
 
