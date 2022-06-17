@@ -38,11 +38,17 @@ export const getArticlesByTopic = (topic, sort, sortOrder) => {
         .then(function (response) {
             return response.data;
         })
+        .catch(error => {
+            return error;
+        })
     } else {
         let url = `/articles?topic=${topic}&sort_by=${sort}&order=${sortOrder}`
         return myApi.get(url)
         .then(function (response) {
             return response.data;
+        })
+        .catch(error => {
+            return error;
         })
     }
 }
@@ -51,6 +57,9 @@ export const getArticleById = (article) => {
     return myApi.get(`/articles/${article}`)
     .then((res) => {
         return res.data;
+    })
+    .catch(error => {
+        return error;
     })
 }
 

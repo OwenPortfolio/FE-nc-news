@@ -12,12 +12,18 @@ const Article = ({user}) => {
     const [votes, setVotes] = useState(0);
     const [seeComments, setSeeComments] = useState(false);
     const [articleText, setArticleText] = useState('')
+    const [error, setError] = useState();
 
     useEffect(() => {
         getArticleById(article).then((articleById) => {
-            setCurrentArticle(articleById.article);
-            setArticleText(articleById.article.body)
-            setVotes(articleById.article.votes)
+            if(articleById.article){
+                console.log(articleById.article)
+                setCurrentArticle(articleById.article);
+                setArticleText(articleById.article.body)
+                setVotes(articleById.article.votes)
+            } else {
+                setError(articleById.response.status)
+            }
             setLoading(false);
         })
     }, [article]);
@@ -38,6 +44,8 @@ const Article = ({user}) => {
 
     if(loading){
         return (<h1>LOADING</h1>)
+    } else if(error){
+        return <h2>{error}: No Such Article</h2>
     } else {
         return (
         <div className="currentArticle">
