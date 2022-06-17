@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {getArticles} from '../utils/api';
 import SortBox from '../components/SortBox';
+import Pages from '../components/Pages';
 
 const Body = () => {
 
@@ -9,14 +10,23 @@ const Body = () => {
     const [sortOrder, setSortOrder] = useState('desc'); 
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [maxPages, setMaxPages] = useState();
 
     useEffect(() => {
         getArticles(sort, sortOrder).then((articlesFromApi) => {
-            setArticles(articlesFromApi.articles);
+            setMaxPages(Math.floor(articlesFromApi.articles.length / 10) + 1);
+            if(page === 0){
+                setArticles(articlesFromApi.articles.slice(page, page + 10));
+            } else {
+                setArticles(articlesFromApi.articles.slice(page * 10, (page*10) + 10));
+            }
             setLoading(false);
         });
-    }, [sort, sortOrder]);
+    }, [sort, sortOrder, page]);
     
+
+
     if (loading){
         return (<h1>LOADING</h1>)
     } else {
@@ -24,6 +34,7 @@ const Body = () => {
         <>
         <h3 id='BodyHead'>Stories</h3>
         <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
+        <Pages page={page} setPage={setPage} maxPage={maxPages}/>
         <ul id='ArticleList'>
             {articles.map((article) => {
                 return <li className="articleCard" key={article.article_id}>
