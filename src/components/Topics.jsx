@@ -19,7 +19,7 @@ const Topics = () => {
     } else {
         return (
         <>
-        <h2>Topics:</h2>
+        <h3 id='TopicBox'>Topics:</h3>
         <ul id='TopicList'>
             {topics.map((topic) => {
                 let path = '/articles/topics/' + topic.slug;  

@@ -22,14 +22,13 @@ const Body = () => {
     } else {
         return (
         <>
-        <h2 id='BodyHead'>Articles</h2>
+        <h3 id='BodyHead'>Stories</h3>
         <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <ul id='ArticleList'>
             {articles.map((article) => {
                 return <li className="listArticle" key={article.article_id}>
                         <Link to={`/articles/${article.article_id}`}><h3>{article.title}</h3></Link>
-                        <p>{article.author}</p>
-                        <p>{article.created_at}</p>
+                        <p>Author: {article.author} Date: {article.created_at.substring(0,10)}</p>
                         <p id='blurb'>{article.body}</p>
                     </li>
             })}

@@ -1,7 +1,6 @@
 const Header = () => {
-    return <header>
-        <title>News Filter</title>
-        <h3>News Filter</h3>
+    return <header id="title">
+        <h2>Tabloid Filter</h2>
     </header>
 }
 

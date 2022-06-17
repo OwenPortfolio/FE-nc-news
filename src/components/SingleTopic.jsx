@@ -32,7 +32,7 @@ const SingleTopic = () => {
     } else {
         return (
         <>
-        <h2 id='BodyHead'>Topic: {topic}</h2>
+        <h3 id='BodyHead'>Topic: {topic}</h3>
         <SortBox sort={sort} setSort={setSort} setSortOrder={setSortOrder}/>
         <ul id='ArticleList'>
             {topicFilter.map((article) => {

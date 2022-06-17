@@ -15,13 +15,35 @@ ul {
   list-style: none;
 }
 
+button {
+  margin:0.2rem;
+  box-shadow: 3px 3px 3px rgb(172, 172, 172);
+  border-style: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: medium;
+  color: white;
+  background-color: rgb(104, 159, 191);
+}
+
+button:hover {
+  background-color: rgb(24, 96, 138);
+}
+#ArticleText{
+  border-radius: 1rem;
+  background-color: rgb(184, 210, 232);
+  padding: 1rem;
+  margin: 1rem;
+}
+
 #SortBox {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   text-align: center;
-  display: flex;
+  display: block;
 
 }
 
@@ -56,12 +78,15 @@ ul {
 }
 
 .currentArticle{
+
   margin-left: 3rem;
   margin-right: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 .Navbar {
+  border-radius: 1rem;
+  background-color:rgb(189, 212, 231);
   display: block;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -85,9 +110,26 @@ ul {
 }
 
 Header{
-  margin-left: 10rem;
-  margin-right: 10rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
+h2,h3,h4{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#SignedIn{
+  max-height: 0.5rem;
+}
+
+#TopicBox{
+  max-height: 0.75rem;
+}
+#title{
+  text-align: center;
+  font-size: larger;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 #ArticleList {
   list-style: none;
@@ -100,17 +142,17 @@ p{
 @media only screen and (min-width: 600px){
 
   #SortBox {
-    margin-left: 20rem;
-    margin-right: 20rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
     text-align: center;
-    display: flex;
+    display: block;
     
   }
   
 
   Header{
-    margin-left: 15rem;
-    margin-right: 10rem;
+    margin-left: 25rem;
+    margin-right: 15rem;
   }
   .currentArticle{
     margin-left: 15rem;

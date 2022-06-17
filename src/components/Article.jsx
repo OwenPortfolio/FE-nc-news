@@ -51,10 +51,9 @@ const Article = ({user}) => {
         <div className="currentArticle">
             <h3>{currentArticle.title}</h3>
                 <div id="articleFeatures">
-                    <h4>Author: {currentArticle.author}</h4>
-                    <VoteButton votes={votes} article={article}/>
+                    <h3>Author: {currentArticle.author} <VoteButton votes={votes} article={article}/></h3>
                 </div>
-            <p>{body}</p>
+            <p id='ArticleText'>{body}</p>
             <button onClick={revealComments}>{boxName}: {currentArticle.comment_count}</button>
             <div id='commentBox'>{commentBox}</div>
         </div> 
