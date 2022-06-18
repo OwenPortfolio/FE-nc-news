@@ -139,6 +139,7 @@ h2,h3,h4{
 }
 
 #SignedIn{
+  margin-bottom: 0.5rem;
   max-height: 0.5rem;
 }
 
